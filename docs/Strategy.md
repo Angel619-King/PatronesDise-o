@@ -1,7 +1,9 @@
 
 # Strategy
 
-El patrón **Strategy** permite definir una familia de algoritmos, encapsularlos y hacerlos intercambiables. Esto permite que el algoritmo varíe independientemente del cliente que lo utiliza.
+El patrón **Strategy** es un patrón de diseño de comportamiento que permite definir un conjunto de algoritmos, encapsularlos en clases separadas y hacerlos intercambiables según las necesidades del cliente. Esto brinda flexibilidad al permitir cambiar dinámicamente el algoritmo utilizado por un objeto sin modificar su código.
+
+Este patrón es especialmente útil cuando un sistema necesita ejecutar diferentes comportamientos o algoritmos dependiendo de las circunstancias, sin tener que usar estructuras condicionales complejas.
 
 ## ¿Cómo funciona?
 1. **Estrategia (Strategy):** Define una interfaz común para todos los algoritmos.
