@@ -1,7 +1,9 @@
 
 # Command
 
-El patrón **Command** encapsula una solicitud como un objeto, lo que permite parametrizar objetos con solicitudes, retrasar la ejecución de una solicitud o soportar operaciones reversibles.
+El patrón **Command** es un patrón de diseño de comportamiento que encapsula una solicitud o acción como un objeto. Esto permite parametrizar objetos con diferentes solicitudes, programar la ejecución de acciones, registrar solicitudes en un historial para su potencial reversión y promover un diseño desacoplado entre emisores y receptores.
+
+Este patrón es especialmente útil en sistemas donde se requiere ejecutar comandos bajo diferentes contextos, soportar operaciones reversibles (deshacer/rehacer) o manejar filas de solicitudes.
 
 ## ¿Cómo funciona?
 1. **Comando (Command):** Declara una interfaz común para ejecutar operaciones.
