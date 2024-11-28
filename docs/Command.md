@@ -10,6 +10,8 @@ Este patrón es especialmente útil en sistemas donde se requiere ejecutar coman
 2. **Receptor (Receiver):** Ejecuta la acción concreta.
 3. **Invocador (Invoker):** Solicita al comando que ejecute la acción.
 
+![Diagrama del patrón Strategy](https://reactiveprogramming.io/_next/image?url=%2Fbooks%2Fpatterns%2Fimg%2Fpatterns%2Fcommand2.png&w=3840&q=75)
+
 ## Ejemplo práctico
 Un sistema de control remoto:
 - **Comandos:** Encender y apagar la luz.

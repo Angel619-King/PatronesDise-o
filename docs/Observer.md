@@ -10,6 +10,8 @@ El patrón **Observer** define una relación de uno a muchos entre objetos, perm
 1. **Sujeto (Subject):** Mantiene una lista de observadores y les notifica cualquier cambio en su estado.
 2. **Observador (Observer):** Se registra en el sujeto y responde a los cambios de estado.
 
+![Diagrama del patrón Observer](https://th.bing.com/th/id/OIP.mljHIxyVUUjwo0nQl30kqwHaEI?rs=1&pid=ImgDetMain)
+
 ## Ejemplo práctico
 Un sistema de noticias:
 - **Sujeto:** Fuente de noticias que publica actualizaciones.

@@ -9,6 +9,9 @@ Este patrón es especialmente útil cuando un sistema necesita ejecutar diferent
 1. **Estrategia (Strategy):** Define una interfaz común para todos los algoritmos.
 2. **Contexto (Context):** Mantiene una referencia a una estrategia y la utiliza para ejecutar el algoritmo.
 
+
+![Diagrama del patrón Strategy](https://thepowerups-learning.com/wp-content/uploads/2021/03/Strategy.jpg)
+
 ## Ejemplo práctico
 Un sistema de pago con diferentes métodos:
 - **Estrategias:** Pago con tarjeta de crédito, PayPal y criptomonedas.
