@@ -32,4 +32,95 @@ Usar el Patrón State ofrece varias ventajas, especialmente en aplicaciones que 
 - **Escalabilidad:**
     Ideal para sistemas donde los estados pueden crecer en cantidad o complejidad, como máquinas de estado, videojuegos, interfaces de usuario o sistemas de control.
 ---
+## Ejemplo práctico:
+
+El patrón de diseño **State** permite que un objeto altere su comportamiento cuando cambia su estado interno. En el contexto de una máquina expendedora, este patrón se utiliza para gestionar diferentes comportamientos según el estado de la máquina, como esperar una moneda, estar en funcionamiento para dispensar productos o estar fuera de servicio debido a la falta de fondos o productos. Este enfoque simplifica el código al evitar múltiples condicionales, permitiendo que cada estado tenga su propio conjunto de acciones y facilitando el cambio de comportamientos de manera flexible. A continuación se presenta un ejemplo que ilustra cómo implementar este patrón en una máquina expendedora.
+
+### Implementación en Python:
+
+```python
+# Clase Estado base
+class VendingMachineState:
+    def insert_coin(self):
+        pass
+
+    def press_button(self):
+        pass
+
+    def dispense_item(self):
+        pass
+
+# Estado "Esperando"
+class WaitingState(VendingMachineState):
+    def insert_coin(self):
+        print("Moneda insertada. ¡Listo para elegir producto!")
+    
+    def press_button(self):
+        print("Primero debes insertar una moneda.")
+    
+    def dispense_item(self):
+        print("No se puede entregar el producto sin presionar el botón.")
+
+# Estado "En funcionamiento"
+class WorkingState(VendingMachineState):
+    def insert_coin(self):
+        print("Ya se insertó una moneda. Elige tu producto.")
+    
+    def press_button(self):
+        print("Botón presionado. ¡Espere mientras se dispensa el producto!")
+    
+    def dispense_item(self):
+        print("Producto dispensado. ¡Disfrútalo!")
+
+# Estado "Sin fondos"
+class OutOfFundsState(VendingMachineState):
+    def insert_coin(self):
+        print("No hay fondos suficientes en la máquina.")
+    
+    def press_button(self):
+        print("La máquina está fuera de servicio.")
+    
+    def dispense_item(self):
+        print("No se puede dispensar nada, la máquina no tiene productos disponibles.")
+
+# Contexto: La máquina expendedora
+class VendingMachine:
+    def __init__(self):
+        self.state = WaitingState()
+
+    def set_state(self, state):
+        self.state = state
+
+    def insert_coin(self):
+        self.state.insert_coin()
+
+    def press_button(self):
+        self.state.press_button()
+
+    def dispense_item(self):
+        self.state.dispense_item()
+
+# Usando el patrón State
+machine = VendingMachine()
+
+# Estado Inicial: Esperando
+print("Estado Inicial: Esperando...")
+machine.insert_coin()
+machine.press_button()
+machine.dispense_item()
+
+# Cambiando a estado 'En funcionamiento'
+print("\nCambiando a estado 'En funcionamiento'...")
+machine.set_state(WorkingState())
+machine.insert_coin()
+machine.press_button()
+machine.dispense_item()
+
+# Cambiando a estado 'Sin fondos'
+print("\nCambiando a estado 'Sin fondos'...")
+machine.set_state(OutOfFundsState())
+machine.insert_coin()
+machine.press_button()
+machine.dispense_item()
+
 
