@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Observer
 
-El patrón **Observer** define una relación de uno a muchos entre objetos, de modo que cuando un objeto cambia su estado, se notifica automáticamente a todos los objetos dependientes. Este patrón es ideal para implementar sistemas de notificación o eventos.
+El patrón **Observer** define una relación de uno a muchos entre objetos, permitiendo que cuando un objeto central (el Sujeto) cambie su estado, notifique automáticamente a todos los objetos dependientes (los Observadores). Este patrón es ampliamente utilizado en sistemas donde se requiere una actualización automática en tiempo real de múltiples partes interesadas.
 
 ## ¿Cómo funciona?
 1. **Sujeto (Subject):** Mantiene una lista de observadores y les notifica cualquier cambio en su estado.

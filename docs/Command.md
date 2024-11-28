@@ -66,3 +66,4 @@ control.presionarBoton();
 
 control.setComando(apagarLuz);
 control.presionarBoton();
+´´´
