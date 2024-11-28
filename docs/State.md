@@ -123,4 +123,11 @@ machine.insert_coin()
 machine.press_button()
 machine.dispense_item()
 
+```
+## Diagrama State 
+El diagrama muestra cómo el cliente interactúa con la máquina, cómo la máquina cambia de estado y cómo responde el sistema a cada acción del cliente.
+
+![alt text](diagram-export-28-11-2024-11_03_39-a.m..png)
+
+
 
