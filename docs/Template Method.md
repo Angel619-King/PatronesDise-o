@@ -87,7 +87,7 @@ coffee_with_sugar.make_coffee()
 
 
 ```
-## Diagrama State 
+## Diagrama Template Method
 El diagrama muestra cómo el **Patrón de Diseño Template Method** organiza el flujo de un algoritmo en una **Clase Abstracta**, que define la estructura general del proceso (en este caso, hacer café) a través del método `make_coffee()`. La **Clase Abstracta** contiene pasos comunes que no cambian, como `boil_water()`, `brew_coffee_grounds()`, y `pour_in_cup()`, mientras que el método `add_condiments()` es abstracto y debe ser implementado por las subclases.
 
 Las **subclases concretas** (`ConcreteClass1` y `ConcreteClass2`) heredan de la **Clase Abstracta** y sobrescriben el método `add_condiments()` para personalizar cómo se añaden los condimentos en cada caso.
