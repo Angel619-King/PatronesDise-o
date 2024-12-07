@@ -43,8 +43,39 @@ Imagina que necesitas utilizar un dispositivo con enchufe europeo en un tomacorr
 - **Adaptado**: El enchufe europeo.
 - **Adaptador**: Un convertidor que traduce las conexiones del enchufe europeo para que encaje y funcione en el tomacorriente americano.
 
+## Representacion grafica
+![Diagrama del Patrón Adapter](https://reactiveprogramming.io/_next/image?url=%2Fbooks%2Fpatterns%2Fimg%2Fpatterns-articles%2Fadapter-diagram.png&w=3840&q=75)
+
 ---
 
+## Código de Ejemplo en Python
+```python
+# Target: La interfaz esperada por el cliente.
+class AmericanSocket:
+    def connect(self):
+        return "Conectado a una toma americana."
+
+# Adaptado: La clase existente cuya interfaz es incompatible.
+class EuropeanPlug:
+    def plug_in(self):
+        return "Conectado a un enchufe europeo."
+
+# Adaptador: Convierte la interfaz del adaptado en la interfaz esperada.
+class Adapter(AmericanSocket):
+    def __init__(self, european_plug):
+        self.european_plug = european_plug
+
+    def connect(self):
+        # Traduce la solicitud de conexión
+        return self.european_plug.plug_in()
+
+# Cliente: Usa la interfaz Target.
+def main():
+    european_plug = EuropeanPlug()
+    adapter = Adapter(european_plug)
+    print(adapter.connect())
+
+if __name__ == "__main__":
+    main()
 ## Representación Gráfica
-```plaintext
-Cliente ---> Target (Interfaz Esperada) ---> Adaptador ---> Adaptado
+
