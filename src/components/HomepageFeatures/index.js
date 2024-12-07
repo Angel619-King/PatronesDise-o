@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '¿Qué son los Patrones de Diseño?',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    imgSrc: '/img/1.png', // Ruta a la imagen
     description: (
       <>
         Los patrones de diseño son soluciones probadas y reutilizables para problemas comunes en el diseño de software.
@@ -18,7 +18,7 @@ const FeatureList = [
   },
   {
     title: '¿Para qué sirven los Patrones de Diseño?',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    imgSrc: '/img/2.png', // Ruta a la imagen
     description: (
       <>
         1. <b>Resolución de Problemas Recurrentes:</b> Abordan desafíos comunes en el desarrollo de software.<br />
@@ -30,7 +30,7 @@ const FeatureList = [
   },
   {
     title: 'Categorías de Patrones de Diseño',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    imgSrc: '/img/3.png', // Ruta a la imagen
     description: (
       <>
         - <b>Creacionales:</b> Se enfocan en la creación de objetos. Ejemplo: <i>Singleton</i>, <i>Factory Method</i>.<br />
@@ -41,11 +41,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ imgSrc, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={imgSrc} alt={title} className={styles.featureImg} /> {/* Cambiamos Svg por img */}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -68,7 +68,7 @@ export default function HomepageFeatures() {
             className="button button--secondary button--lg"
             to="/docs/home">
             Patrones de diseño ⬇️😎
-            </Link>
+          </Link>
         </div>
         {/* Lista de características */}
         <div className="row">
