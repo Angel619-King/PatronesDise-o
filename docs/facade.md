@@ -1,4 +1,8 @@
-# Patrón de Diseño: Facade
+---
+sidebar_position: 9
+---
+
+# Facade
 
 ## Descripción Breve
 El patrón *Facade* proporciona una interfaz simplificada para interactuar con un sistema complejo de clases, librerías o frameworks.
@@ -11,7 +15,7 @@ Cuando un sistema está compuesto por múltiples clases o subsistemas con intera
 ---
 
 ## Cómo Funciona
-El *Facade* actúa como un intermediario, encapsulando las funcionalidades de un conjunto de clases o subsistemas y exponiéndolas a través de una única interfaz simple. Esto permite al cliente utilizar el sistema sin necesidad de conocer sus detalles internos.
+El *Facade* actúa como intermediario, encapsulando las funcionalidades de un conjunto de clases o subsistemas y exponiéndolas a través de una única interfaz simple. Esto permite al cliente utilizar el sistema sin necesidad de conocer sus detalles internos.
 
 ### Elementos Clave:
 1. **Cliente**: El código que utiliza el sistema simplificado.
@@ -45,6 +49,53 @@ En una aplicación que manipula archivos, el cliente podría necesitar realizar 
 
 El *Facade* simplificaría estas interacciones ofreciendo una única interfaz que encapsula todas estas operaciones en una sola llamada.
 
-### Ejemplo Práctico:
-```plaintext
-Cliente ---> Facade (interfaz simplificada) ---> Subsistemas (clases para abrir, leer, escribir y cerrar archivos)
+---
+
+## Representación Gráfica
+
+![Diagrama del Patrón Facade](https://www.ionos.mx/digitalguide/fileadmin/DigitalGuide/Schaubilder/diagrama-de-clase-uml-del-patron-fachada.png)
+
+---
+
+## Código de Ejemplo en Python
+
+```python
+# Subsistemas
+class AbrirArchivo:
+    def abrir(self, nombre):
+        print(f"Archivo '{nombre}' abierto.")
+
+class LeerArchivo:
+    def leer(self):
+        print("Leyendo datos del archivo.")
+
+class EscribirArchivo:
+    def escribir(self, datos):
+        print(f"Escribiendo datos: {datos}")
+
+class CerrarArchivo:
+    def cerrar(self):
+        print("Archivo cerrado.")
+
+# Facade
+class SistemaDeArchivos:
+    def __init__(self, nombre_archivo):
+        self.nombre_archivo = nombre_archivo
+        self.abrir = AbrirArchivo()
+        self.leer = LeerArchivo()
+        self.escribir = EscribirArchivo()
+        self.cerrar = CerrarArchivo()
+
+    def procesar_archivo(self, datos):
+        self.abrir.abrir(self.nombre_archivo)
+        self.leer.leer()
+        self.escribir.escribir(datos)
+        self.cerrar.cerrar()
+
+# Cliente
+def main():
+    sistema = SistemaDeArchivos("archivo.txt")
+    sistema.procesar_archivo("Datos de ejemplo")
+
+if __name__ == "__main__":
+    main()
