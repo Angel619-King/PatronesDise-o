@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Introducción a los Patrones de Diseño
 
 ## ¿Qué son los Patrones de Diseño?

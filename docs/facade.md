@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 9
 ---
 
-# Patrón de Diseño: Facade
+# Facade
 
 ## Descripción Breve
 El patrón *Facade* proporciona una interfaz simplificada para interactuar con un sistema complejo de clases, librerías o frameworks.

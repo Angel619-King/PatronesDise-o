@@ -1,4 +1,4 @@
-# Patrón de Diseño: Adapter
+# Adapter
 
 ## Descripción Breve
 El patrón *Adapter* permite que clases con interfaces incompatibles trabajen juntas mediante un "adaptador" que convierte la interfaz de una clase en otra.
