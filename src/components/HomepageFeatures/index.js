@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -61,6 +62,15 @@ export default function HomepageFeatures() {
         <Heading as="h1" className="text--center margin-bottom--lg">
           Introducción a los Patrones de Diseño
         </Heading>
+        {/* Botón centrado */}
+        <div className="text--center margin-bottom--lg">
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/home">
+            Patrones de diseño ⬇️😎
+            </Link>
+        </div>
+        {/* Lista de características */}
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
